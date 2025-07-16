@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Courses {
+  id            Int      @id @default(autoincrement())
+  courseId      String?  // Optional field
+  author        String?  // Optional field
+  category      String?  // Optional field
+  courseIds     String?  // Optional field
+  noOfRecord    Int?     // Optional field
+  pdfId         String?  // Optional field
+  title         String?  // Optional field
+  ustaz         String?  // Optional field
+  image         String?  // Optional field
+  totalDuration Int?     // Optional field
+  audioSizes    String?  // Optional field
+  isCompleted   Int      @default(0)
+  dateTime      DateTime @db.Timestamp(0) // Corresponds to timestamp without time zone
+  isDeleted     Boolean  @default(false)
+  isBeginner    Boolean  @default(false)
+
+  @@index([dateTime], name: "Courses_dateTime_idx")
+}
