@@ -1,6 +1,7 @@
 import { Timestamp } from "next/dist/server/lib/cache-handlers/types"
 
 export type CourseType = {
+  __v : any,
   _id   : any,        // Int      @id @default(autoincrement())
   courseId  : String,   // String?  // Optional field
   author   : String,  // String?  // Optional field
