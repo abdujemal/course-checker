@@ -39,7 +39,7 @@ export default function Home() {
     setLoading(true);
     const isoString = course!.dateTime.replace(' ', 'T').substring(0, 26);
     const date = new Date(isoString);
-    const { _id, ...courseWithOutId } = course!;
+    const { _id, __v, ...courseWithOutId } = course!;
     await fetch("/api/courses", {
       method: "POST",
       headers: {
