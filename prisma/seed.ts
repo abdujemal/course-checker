@@ -6,7 +6,7 @@ async function main() {
       courseId: "ILM-001",
       author: "Ustaz Ahmed",
       category: "Aqeedah",
-      courseIds: "ILM-001,ILM-002",
+      courseIds: ["ILM-001","ILM-002"],
       noOfRecord: 10,
       pdfId: "pdf123",
       title: "Intro to Aqeedah",
