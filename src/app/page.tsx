@@ -49,7 +49,7 @@ export default function Home() {
         ...courseWithOutId,
         isCompleted: finished ? 1 : 0,
         dateTime: date,
-        
+        courseIds: courseWithOutId.courseIds.split(",").map((id: string) => id.trim()).filter((id: string) => id !== "")        
       })
     })
     setLoading(false);
