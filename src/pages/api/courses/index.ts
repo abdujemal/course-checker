@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'POST') {
     try {
       const newCourse = await prisma.courses.create({
-        data: req.body
+        data: {...req.body}
       });
 
       res.status(201).json({ message: 'Course created successfully', course: newCourse });
