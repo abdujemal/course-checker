@@ -900,7 +900,6 @@ export namespace Prisma {
     courseId: string | null
     author: string | null
     category: string | null
-    courseIds: string | null
     noOfRecord: number | null
     pdfId: string | null
     title: string | null
@@ -919,7 +918,6 @@ export namespace Prisma {
     courseId: string | null
     author: string | null
     category: string | null
-    courseIds: string | null
     noOfRecord: number | null
     pdfId: string | null
     title: string | null
@@ -973,7 +971,6 @@ export namespace Prisma {
     courseId?: true
     author?: true
     category?: true
-    courseIds?: true
     noOfRecord?: true
     pdfId?: true
     title?: true
@@ -992,7 +989,6 @@ export namespace Prisma {
     courseId?: true
     author?: true
     category?: true
-    courseIds?: true
     noOfRecord?: true
     pdfId?: true
     title?: true
@@ -1117,7 +1113,7 @@ export namespace Prisma {
     courseId: string | null
     author: string | null
     category: string | null
-    courseIds: string | null
+    courseIds: string[]
     noOfRecord: number | null
     pdfId: string | null
     title: string | null
@@ -1236,7 +1232,7 @@ export namespace Prisma {
       courseId: string | null
       author: string | null
       category: string | null
-      courseIds: string | null
+      courseIds: string[]
       noOfRecord: number | null
       pdfId: string | null
       title: string | null
@@ -1675,7 +1671,7 @@ export namespace Prisma {
     readonly courseId: FieldRef<"Courses", 'String'>
     readonly author: FieldRef<"Courses", 'String'>
     readonly category: FieldRef<"Courses", 'String'>
-    readonly courseIds: FieldRef<"Courses", 'String'>
+    readonly courseIds: FieldRef<"Courses", 'String[]'>
     readonly noOfRecord: FieldRef<"Courses", 'Int'>
     readonly pdfId: FieldRef<"Courses", 'String'>
     readonly title: FieldRef<"Courses", 'String'>
@@ -2192,7 +2188,7 @@ export namespace Prisma {
     courseId?: StringNullableFilter<"Courses"> | string | null
     author?: StringNullableFilter<"Courses"> | string | null
     category?: StringNullableFilter<"Courses"> | string | null
-    courseIds?: StringNullableFilter<"Courses"> | string | null
+    courseIds?: StringNullableListFilter<"Courses">
     noOfRecord?: IntNullableFilter<"Courses"> | number | null
     pdfId?: StringNullableFilter<"Courses"> | string | null
     title?: StringNullableFilter<"Courses"> | string | null
@@ -2211,7 +2207,7 @@ export namespace Prisma {
     courseId?: SortOrderInput | SortOrder
     author?: SortOrderInput | SortOrder
     category?: SortOrderInput | SortOrder
-    courseIds?: SortOrderInput | SortOrder
+    courseIds?: SortOrder
     noOfRecord?: SortOrderInput | SortOrder
     pdfId?: SortOrderInput | SortOrder
     title?: SortOrderInput | SortOrder
@@ -2233,7 +2229,7 @@ export namespace Prisma {
     courseId?: StringNullableFilter<"Courses"> | string | null
     author?: StringNullableFilter<"Courses"> | string | null
     category?: StringNullableFilter<"Courses"> | string | null
-    courseIds?: StringNullableFilter<"Courses"> | string | null
+    courseIds?: StringNullableListFilter<"Courses">
     noOfRecord?: IntNullableFilter<"Courses"> | number | null
     pdfId?: StringNullableFilter<"Courses"> | string | null
     title?: StringNullableFilter<"Courses"> | string | null
@@ -2252,7 +2248,7 @@ export namespace Prisma {
     courseId?: SortOrderInput | SortOrder
     author?: SortOrderInput | SortOrder
     category?: SortOrderInput | SortOrder
-    courseIds?: SortOrderInput | SortOrder
+    courseIds?: SortOrder
     noOfRecord?: SortOrderInput | SortOrder
     pdfId?: SortOrderInput | SortOrder
     title?: SortOrderInput | SortOrder
@@ -2279,7 +2275,7 @@ export namespace Prisma {
     courseId?: StringNullableWithAggregatesFilter<"Courses"> | string | null
     author?: StringNullableWithAggregatesFilter<"Courses"> | string | null
     category?: StringNullableWithAggregatesFilter<"Courses"> | string | null
-    courseIds?: StringNullableWithAggregatesFilter<"Courses"> | string | null
+    courseIds?: StringNullableListFilter<"Courses">
     noOfRecord?: IntNullableWithAggregatesFilter<"Courses"> | number | null
     pdfId?: StringNullableWithAggregatesFilter<"Courses"> | string | null
     title?: StringNullableWithAggregatesFilter<"Courses"> | string | null
@@ -2297,7 +2293,7 @@ export namespace Prisma {
     courseId?: string | null
     author?: string | null
     category?: string | null
-    courseIds?: string | null
+    courseIds?: CoursesCreatecourseIdsInput | string[]
     noOfRecord?: number | null
     pdfId?: string | null
     title?: string | null
@@ -2316,7 +2312,7 @@ export namespace Prisma {
     courseId?: string | null
     author?: string | null
     category?: string | null
-    courseIds?: string | null
+    courseIds?: CoursesCreatecourseIdsInput | string[]
     noOfRecord?: number | null
     pdfId?: string | null
     title?: string | null
@@ -2334,7 +2330,7 @@ export namespace Prisma {
     courseId?: NullableStringFieldUpdateOperationsInput | string | null
     author?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableStringFieldUpdateOperationsInput | string | null
-    courseIds?: NullableStringFieldUpdateOperationsInput | string | null
+    courseIds?: CoursesUpdatecourseIdsInput | string[]
     noOfRecord?: NullableIntFieldUpdateOperationsInput | number | null
     pdfId?: NullableStringFieldUpdateOperationsInput | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
@@ -2353,7 +2349,7 @@ export namespace Prisma {
     courseId?: NullableStringFieldUpdateOperationsInput | string | null
     author?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableStringFieldUpdateOperationsInput | string | null
-    courseIds?: NullableStringFieldUpdateOperationsInput | string | null
+    courseIds?: CoursesUpdatecourseIdsInput | string[]
     noOfRecord?: NullableIntFieldUpdateOperationsInput | number | null
     pdfId?: NullableStringFieldUpdateOperationsInput | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
@@ -2372,7 +2368,7 @@ export namespace Prisma {
     courseId?: string | null
     author?: string | null
     category?: string | null
-    courseIds?: string | null
+    courseIds?: CoursesCreatecourseIdsInput | string[]
     noOfRecord?: number | null
     pdfId?: string | null
     title?: string | null
@@ -2390,7 +2386,7 @@ export namespace Prisma {
     courseId?: NullableStringFieldUpdateOperationsInput | string | null
     author?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableStringFieldUpdateOperationsInput | string | null
-    courseIds?: NullableStringFieldUpdateOperationsInput | string | null
+    courseIds?: CoursesUpdatecourseIdsInput | string[]
     noOfRecord?: NullableIntFieldUpdateOperationsInput | number | null
     pdfId?: NullableStringFieldUpdateOperationsInput | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
@@ -2409,7 +2405,7 @@ export namespace Prisma {
     courseId?: NullableStringFieldUpdateOperationsInput | string | null
     author?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableStringFieldUpdateOperationsInput | string | null
-    courseIds?: NullableStringFieldUpdateOperationsInput | string | null
+    courseIds?: CoursesUpdatecourseIdsInput | string[]
     noOfRecord?: NullableIntFieldUpdateOperationsInput | number | null
     pdfId?: NullableStringFieldUpdateOperationsInput | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
@@ -2447,6 +2443,14 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
   }
 
   export type IntNullableFilter<$PrismaModel = never> = {
@@ -2512,7 +2516,6 @@ export namespace Prisma {
     courseId?: SortOrder
     author?: SortOrder
     category?: SortOrder
-    courseIds?: SortOrder
     noOfRecord?: SortOrder
     pdfId?: SortOrder
     title?: SortOrder
@@ -2531,7 +2534,6 @@ export namespace Prisma {
     courseId?: SortOrder
     author?: SortOrder
     category?: SortOrder
-    courseIds?: SortOrder
     noOfRecord?: SortOrder
     pdfId?: SortOrder
     title?: SortOrder
@@ -2624,8 +2626,17 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type CoursesCreatecourseIdsInput = {
+    set: string[]
+  }
+
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type CoursesUpdatecourseIdsInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type NullableIntFieldUpdateOperationsInput = {

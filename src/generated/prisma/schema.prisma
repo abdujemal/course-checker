@@ -19,7 +19,7 @@ model Courses {
   courseId      String? // Optional field
   author        String? // Optional field
   category      String? // Optional field
-  courseIds     String? // Optional field
+  courseIds     String[] // Optional field
   noOfRecord    Int? // Optional field
   pdfId         String? // Optional field
   title         String? // Optional field
