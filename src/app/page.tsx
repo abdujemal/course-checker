@@ -90,7 +90,8 @@ export default function Home() {
       <p className="text-2xl">{course.ustaz}</p>
       <p className="text-2xl">No of audio {course.courseIds.split(",").length}</p>
       <audio controls src={getLastAudioUrl()} />
-      <div className="flex items-center gap-2">
+      <a className="pt-2 pb-2 pr-4 pl-4 cursor-pointer bg-blue-600 rounded-2xl" target="_blank" href={course.pdfId.split(",")[course.pdfId.split(",").length - 1]}>Show the pdf</a>
+      <div className="flex items-center gap-5 pt-6">
         <button onClick={()=>saveToSupa(true)} className="pt-2 pb-2 pr-4 pl-4 cursor-pointer bg-blue-600 rounded-2xl"> { loading ? "Loading..." : "Finished" }</button>
         <button onClick={()=>saveToSupa(false)} className="pt-2 pb-2 pr-4 pl-4  cursor-pointer bg-blue-600 rounded-2xl">{ loading ? "Loading..." : "Not Finished" }</button>
       </div>
