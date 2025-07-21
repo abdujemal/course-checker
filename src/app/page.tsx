@@ -88,6 +88,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center gap-3 pt-24 pr-5 pl-5">
       <p className="text-3xl"><strong>{course.title}</strong></p>
       <p className="text-2xl">{course.ustaz}</p>
+      <p className="text-2xl">No of audio {course.courseIds.split(",").length}</p>
       <audio controls src={getLastAudioUrl()} />
       <div className="flex items-center gap-2">
         <button onClick={()=>saveToSupa(true)} className="pt-2 pb-2 pr-4 pl-4 cursor-pointer bg-blue-600 rounded-2xl"> { loading ? "Loading..." : "Finished" }</button>
