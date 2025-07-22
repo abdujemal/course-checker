@@ -9,6 +9,7 @@ import 'react-h5-audio-player/lib/styles.css';
 export default function Home() {
   const [course, setCourse] = useState<CourseType | null>(null); // Using 'any' for simplicity, replace with CourseType if defined
   const [loading, setLoading] = useState<boolean>(false);
+  const [no, setNo] = useState<number | null>(null);
 
   const serverUrl = "https://www.ilmfelagi.com/api/v1/courses/byNumber"
 
@@ -19,7 +20,8 @@ export default function Home() {
   const refreshCourse = async () => {
     setCourse(null)
     fetch("/api/courses/count").then((res) => res.json()).then((data) => {
-      const n : Number =  Number(data.count) + 1 // Debugging line to check course count
+      const n : number =  Number(data.count) + 1 // Debugging line to check course count
+      setNo(n)
       console.log("Course count:", n); // Debugging line to check course count
       if(Number.isNaN(n)){
         toast.error("Refresh Again!!")
@@ -77,7 +79,7 @@ export default function Home() {
     refreshCourse()
   }
 
-  if(course === null){
+  if(course === null || no === null) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <h1>Loading...</h1>
@@ -87,7 +89,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center gap-3 pt-24 pr-5 pl-5">
-      <p className="text-3xl"><strong>{course.title}</strong></p>
+      <p className="text-3xl"><strong>{no} {course.title}</strong></p>
       <p className="text-2xl">{course.ustaz}</p>
       <p className="text-2xl">No of audio {course.courseIds.split(",").length}</p>
       <div className="w-full shadow-md bg-bg1-light dark:bg-bg1-dark ">
