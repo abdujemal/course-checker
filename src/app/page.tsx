@@ -48,6 +48,7 @@ export default function Home() {
     if(loading) return;
     setLoading(true);
     const isoString = course!.dateTime.replace(' ', 'T').substring(0, 26);
+    console.log("isoString", isoString);
     const date = new Date(isoString);
     const { _id, __v, ...courseWithOutId } = course!;
     let urls: string[] = []
