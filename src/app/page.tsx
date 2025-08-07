@@ -57,7 +57,7 @@ export default function Home() {
     console.log("isoString", isoString)
     console.log("Date()", new Date().toISOString())
     console.log("date", date)
-   
+    
     const { _id, __v, ...courseWithOutId } = course!;
     let urls: string[] = []
     courseWithOutId.courseIds.split(",").forEach((id: string) => {
