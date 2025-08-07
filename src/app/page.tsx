@@ -47,9 +47,17 @@ export default function Home() {
   const saveToSupa = async (finished: boolean) => {
     if(loading) return;
     setLoading(true);
-    const isoString = course!.dateTime.replace(' ', 'T').substring(0, 26);
-    console.log("isoString", isoString);
-    const date = new Date(isoString);
+    const isoString = course!.dateTime.replace(' ', 'T').substring(0, 26);//2023-12-18T22:23:04.815299  2023-12-18T24:12:20.566756
+    let fixedTime = isoString.split("T")[1]
+    if(fixedTime.split(":")[0] == "24"){
+      fixedTime = `23:${fixedTime.split(":").slice(1,undefined).join(":")}`
+      console.log({fixedTime})
+    }
+    const date = new Date(`${isoString.split("T")[0]}T${fixedTime}`);
+    console.log("isoString", isoString)
+    console.log("Date()", new Date().toISOString())
+    console.log("date", date)
+    
     const { _id, __v, ...courseWithOutId } = course!;
     let urls: string[] = []
     courseWithOutId.courseIds.split(",").forEach((id: string) => {
